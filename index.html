@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Kinito Installer</title>
+</head>
+
+<body style="
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff4fd8,#4fd8ff);
+  font-family:Arial;
+">
+
+<div style="
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  width:300px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+">
+
+<h1 style="color:#ff3ea5;">🌸 Kinito</h1>
+<p>Descarga tu mascota digital</p>
+
+<button onclick="download()" style="
+  padding:10px 20px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg,#ff3ea5,#3effc5);
+  color:white;
+  cursor:pointer;
+  font-size:16px;
+">
+💾 Descargar
+</button>
+
+<p id="status">Listo para descargar</p>
+
+</div>
+
+<script>
+function download(){
+  document.getElementById("status").innerText = "Descargando...";
+
+  const a = document.createElement("a");
+  a.href = "Kinito.zip"; // o Kinito.exe
+  a.download = "Kinito";
+  a.click();
+
+  setTimeout(()=>{
+    document.getElementById("status").innerText = "Listo ✔️";
+  },2000);
+}
+</script>
+
+</body>
+</html>
